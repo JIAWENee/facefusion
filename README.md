@@ -1,4 +1,4 @@
-FaceFusion
+FaceFusion - 人脸处理工具
 ==========
 
 > Industry leading face manipulation platform.
@@ -18,6 +18,69 @@ Installation
 ------------
 
 Be aware, the [installation](https://docs.facefusion.io/installation) needs technical skills and is not recommended for beginners. In case you are not comfortable using a terminal, our [Windows Installer](http://windows-installer.facefusion.io) and [macOS Installer](http://macos-installer.facefusion.io) get you started.
+
+### Ubuntu 安装步骤
+
+#### 1. 安装工具
+
+- cURL
+```bash
+apt install curl
+```
+
+- FFmpeg
+```bash
+apt install ffmpeg
+```
+
+#### 2. 创建虚拟环境
+
+```bash
+conda init --all
+
+conda create --name facefusion python=3.12 pip=25.0
+
+conda activate facefusion
+```
+
+#### 3. 安装加速器
+##### CUDA
+
+- 官方命令
+```bash
+conda install nvidia/label/cuda-12.9.1::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn
+```
+
+- 选择与系统匹配的版本 （我的版本是 CUDA 12.2）
+```bash
+conda install nvidia/label/cuda-12.2.2::cuda-runtime nvidia/label/cudnn-9.10.0::cudnn -y
+```
+
+
+#### 4. 安装应用程序
+
+```bash
+python install.py --onnxruntime cuda
+```
+
+#### 5. 重新加载环境
+```bash
+conda deactivate
+
+conda activate facefusion
+```
+
+
+#### 6. 完成
+最后，运行程序：
+
+```bash
+python facefusion.py run --open-browser
+```
+首次运行会先下载模型。
+
+
+
 
 
 Usage
