@@ -191,6 +191,8 @@ def create_uis_program() -> ArgumentParser:
 	group_uis.add_argument('--open-browser', help = wording.get('help.open_browser'), action = 'store_true', default = config.get_bool_value('uis', 'open_browser'))
 	group_uis.add_argument('--ui-layouts', help = wording.get('help.ui_layouts').format(choices = ', '.join(available_ui_layouts)), default = config.get_str_list('uis', 'ui_layouts', 'default'), nargs = '+')
 	group_uis.add_argument('--ui-workflow', help = wording.get('help.ui_workflow'), default = config.get_str_value('uis', 'ui_workflow', 'instant_runner'), choices = facefusion.choices.ui_workflows)
+	group_uis.add_argument('--ui-server-port', help = wording.get('help.ui_server_port'), type = int, default = config.get_int_value('uis', 'ui_server_port', '7860'))
+	group_uis.add_argument('--ui-server-host', help = wording.get('help.ui_server_host'), default = config.get_str_value('uis', 'ui_server_host', '127.0.0.1'))
 	return program
 
 

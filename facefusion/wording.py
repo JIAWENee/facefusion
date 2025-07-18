@@ -189,6 +189,8 @@ WORDING : Dict[str, Any] =\
 		'open_browser': 'open the browser once the program is ready',
 		'ui_layouts': 'launch a single or multiple UI layouts (choices: {choices}, ...)',
 		'ui_workflow': 'choose the ui workflow',
+		'ui_server_port': 'specify the port number for the web server',
+		'ui_server_host': 'specify the server host or IP address for the web server',
 		# download
 		'download_providers': 'download using different providers (choices: {choices}, ...)',
 		'download_scope': 'specify the download scope',

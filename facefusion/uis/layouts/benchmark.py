@@ -75,4 +75,9 @@ def listen() -> None:
 
 
 def run(ui : gradio.Blocks) -> None:
-	ui.launch(favicon_path = 'facefusion.ico', inbrowser = state_manager.get_item('open_browser'))
+	ui.launch(
+		favicon_path = 'facefusion.ico',
+		inbrowser = state_manager.get_item('open_browser'),
+		server_port = state_manager.get_item('ui_server_port'),
+		server_name = state_manager.get_item('ui_server_host')
+	)

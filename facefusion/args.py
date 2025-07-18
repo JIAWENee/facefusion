@@ -117,6 +117,8 @@ def apply_args(args : Args, apply_state_item : ApplyStateItem) -> None:
 	apply_state_item('open_browser', args.get('open_browser'))
 	apply_state_item('ui_layouts', args.get('ui_layouts'))
 	apply_state_item('ui_workflow', args.get('ui_workflow'))
+	apply_state_item('ui_server_port', args.get('ui_server_port'))
+	apply_state_item('ui_server_host', args.get('ui_server_host'))
 	# execution
 	apply_state_item('execution_device_id', args.get('execution_device_id'))
 	apply_state_item('execution_providers', args.get('execution_providers'))
